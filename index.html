@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Independent 4 | Class 6</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f4f1eb;color:#1e1e1e;font-size:15px;line-height:1.65}
+
+.hdr{background:#1a2e4a;color:#fff;padding:2rem 2rem 1.4rem}
+.htag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#c9943a;font-weight:700;margin-bottom:.4rem}
+.hdr h1{font-family:Georgia,serif;font-size:2rem;font-weight:700;line-height:1.2}
+.hdr h1 em{font-style:italic;color:#a8c5e8}
+.hmeta{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.9rem}
+.hpill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:.2rem .8rem;font-size:.77rem;color:#dde6f0}
+
+.objectives{background:#1a2e4a;border-top:1px solid rgba(255,255,255,.1);padding:1rem 2rem 1.4rem}
+.obj-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#c9943a;font-weight:700;margin-bottom:.7rem}
+.obj-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem .8rem}
+.obj-item{font-size:.83rem;color:#dde6f0;display:flex;gap:.5rem;align-items:flex-start}
+.obj-n{color:#c9943a;font-weight:700;flex-shrink:0}
+
+.xpbar{background:#142238;padding:.75rem 2rem;display:flex;align-items:center;gap:1rem}
+.xplbl{font-size:.72rem;color:#c9943a;font-weight:700;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.xptrack{flex:1;background:rgba(255,255,255,.1);border-radius:20px;height:10px;overflow:hidden}
+.xpfill{height:100%;width:0%;background:linear-gradient(90deg,#c9943a,#f0c060);border-radius:20px;transition:width .5s ease}
+.xpnum{font-size:.82rem;color:#f0c060;font-weight:700;white-space:nowrap;min-width:80px;text-align:right}
+
+.agenda{background:#fff;border-bottom:2px solid #e0ddd6;padding:.75rem 2rem;display:flex;flex-wrap:wrap;gap:.3rem;align-items:center}
+.ag{font-size:.77rem;font-weight:600;color:#6b7280;display:flex;align-items:center;gap:.4rem}
+.ag .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.ag:not(:last-child)::after{content:'›';margin-left:.4rem;color:#ccc}
+
+.wrap{max-width:920px;margin:0 auto;padding:1.6rem 1.4rem 3rem}
+
+.sblock{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:1.3rem}
+.shd{display:flex;align-items:center;gap:.8rem;padding:.9rem 1.3rem;cursor:pointer;user-select:none}
+.shd:hover{filter:brightness(.97)}
+.stag{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .65rem;border-radius:5px;flex-shrink:0;white-space:nowrap}
+.stitle{font-family:Georgia,serif;font-size:1.05rem;font-weight:700;flex:1}
+.stime{font-size:.74rem;color:#6b7280;background:#f4f1eb;border-radius:12px;padding:.2rem .65rem;font-weight:600;white-space:nowrap}
+.schev{font-size:.78rem;color:#aaa;transition:transform .25s;flex-shrink:0}
+.sblock.open .schev{transform:rotate(180deg)}
+.sbody{display:none;padding:1.3rem 1.4rem;border-top:1px solid #ece9e2}
+.sblock.open .sbody{display:block}
+
+.sw  .shd{background:#fef3e2}.sw  .stag{background:#c9943a;color:#fff}.sw  .stitle{color:#7a4f10}
+.sv  .shd{background:#eef0fa}.sv  .stag{background:#5c5f9e;color:#fff}.sv  .stitle{color:#2e3060}
+.sq  .shd{background:#fdf4e0}.sq  .stag{background:#b07d1a;color:#fff}.sq  .stitle{color:#5a3e00}
+.ssp .shd{background:#e6f4f1}.ssp .stag{background:#2a7f7f;color:#fff}.ssp .stitle{color:#174f4f}
+.sr  .shd{background:#faeaea}.sr  .stag{background:#b5453a;color:#fff}.sr  .stitle{color:#6b1f1a}
+.sg  .shd{background:#edf5ee}.sg  .stag{background:#4a7c59;color:#fff}.sg  .stitle{color:#1f3d27}
+.swrap .shd{background:#f5eefa}.swrap .stag{background:#7c4fa0;color:#fff}.swrap .stitle{color:#3d1f60}
+
+.ablock{background:#f8f6f1;border-radius:9px;padding:1rem 1.15rem;margin:.75rem 0}
+.albl{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:.5rem}
+.purpose{font-size:.82rem;color:#5c5f9e;font-style:italic;background:#eef0fa;border-radius:6px;padding:.4rem .75rem;margin-bottom:.7rem;border-left:3px solid #5c5f9e}
+p{margin-bottom:.6rem}p:last-child{margin-bottom:0}
+ul,ol{padding-left:1.3rem;margin:.4rem 0}li{margin-bottom:.3rem}
+
+.transition{background:linear-gradient(90deg,#1a2e4a,#2a4a6e);color:#fff;border-radius:10px;padding:.75rem 1.2rem;margin:1rem 0;display:flex;align-items:center;gap:.7rem;font-size:.86rem}
+.transition span{color:#a8c5e8}
+.transition strong{color:#f0c060}
+
+.ex{background:#f0f4ec;border-left:3px solid #4a7c59;padding:.6rem .9rem;border-radius:0 7px 7px 0;font-style:italic;font-size:.84rem;margin:.5rem 0;color:#2a4a32}
+
+.gc{background:linear-gradient(135deg,#1a2e4a,#2a4a6e);color:#fff;border-radius:12px;padding:1.2rem 1.4rem;margin:.75rem 0}
+.gc h3{font-family:Georgia,serif;font-size:1.05rem;color:#c9943a;margin-bottom:.45rem}
+.gc p{font-size:.86rem;color:#c8d8ea;margin-bottom:.35rem}
+
+/* VOCAB TABLE */
+.vtable{width:100%;border-collapse:collapse;margin:.75rem 0;font-size:.84rem}
+.vtable th{background:#1a2e4a;color:#fff;padding:.45rem .8rem;text-align:left;font-weight:600;font-size:.77rem;text-transform:uppercase;letter-spacing:.06em}
+.vtable td{padding:.45rem .8rem;border-bottom:1px solid #e8e5de;vertical-align:top}
+.vtable tr:nth-child(even) td{background:#f8f6f1}
+.vtable em{color:#5c5f9e}
+
+/* CATEGORY CARDS */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.7rem;margin:.75rem 0}
+.cat-card{border-radius:10px;padding:.85rem 1rem;border:2px solid #e0ddd6;background:#fff}
+.cat-title{font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+.cat-item{font-size:.83rem;padding:.2rem 0;border-bottom:1px dashed #e8e5de;color:#333}
+.cat-item:last-child{border-bottom:none}
+
+/* MCQ */
+.mcq{margin:.65rem 0}
+.mcq-q{font-size:.88rem;font-weight:600;color:#1a2e4a;margin-bottom:.4rem}
+.mcq-opts{display:flex;flex-direction:column;gap:.3rem}
+.mopt{padding:.4rem .9rem;border-radius:8px;border:1.5px solid #e0ddd6;background:#fff;font-size:.84rem;cursor:pointer;text-align:left;font-family:inherit;transition:all .18s}
+.mopt:hover{border-color:#5c5f9e;background:#eef0fa}
+.mopt.ok{border-color:#4a7c59;background:#edf5ee;color:#1f3d27;font-weight:600}
+.mopt.no{border-color:#b5453a;background:#faeaea}
+.mcq-fb{font-size:.8rem;margin-top:.3rem;min-height:1rem;font-weight:600;color:#4a7c59}
+.mcq-fb.bad{color:#b5453a}
+
+/* FILL */
+.fill-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.55rem;flex-wrap:wrap;font-size:.86rem}
+.fill-blank{border:none;border-bottom:2px solid #c9943a;background:transparent;font-family:inherit;font-size:.86rem;width:170px;padding:.15rem .3rem;color:#1a2e4a;outline:none;transition:border .18s}
+.fill-blank:focus{border-color:#5c5f9e}
+.fill-blank.ok{border-color:#4a7c59;color:#4a7c59}
+.fill-blank.no{border-color:#b5453a;color:#b5453a}
+.fill-btn{background:#5c5f9e;color:#fff;border:none;border-radius:8px;padding:.38rem .9rem;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit}
+.fill-btn:hover{background:#4a4d8a}
+.fill-fb{font-size:.79rem;font-weight:600;margin-left:.3rem}
+
+/* Q CARDS */
+.qcard-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.75rem 0}
+.qcard{background:#fff;border:2px solid #e0ddd6;border-radius:10px;padding:.85rem 1rem;cursor:pointer;transition:all .2s}
+.qcard:hover{border-color:#c9943a;background:#fffbf3}
+.qcard.active{border-color:#c9943a;background:#fef3e2}
+.qcard-num{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#c9943a;margin-bottom:.3rem}
+.qcard-text{font-size:.87rem;color:#1a2e4a;font-weight:600;line-height:1.4}
+.qcard-hint{font-size:.79rem;color:#6b7280;margin-top:.3rem;display:none}
+.qcard.active .qcard-hint{display:block}
+
+/* CONV GAME */
+.spin-display{font-family:Georgia,serif;font-size:1rem;font-weight:700;color:#1a2e4a;background:#f8f6f1;border:2px solid #c9943a;border-radius:12px;padding:.85rem 1.2rem;min-height:52px;display:flex;align-items:center;justify-content:center;margin:.55rem auto;text-align:center;line-height:1.4}
+.spinbtn{background:#1a2e4a;color:#fff;border:none;border-radius:8px;padding:.5rem 1.3rem;font-size:.86rem;font-weight:600;cursor:pointer;font-family:inherit}
+.spinbtn:hover{background:#2a4a6e}
+
+/* READING */
+.reading-text{background:#fff;border:1px solid #e0ddd6;border-radius:10px;padding:1.1rem 1.3rem;margin:.75rem 0;font-size:.87rem;line-height:1.85}
+.reading-text h4{font-family:Georgia,serif;font-size:1rem;color:#1a2e4a;margin-bottom:.6rem;font-style:italic}
+.reading-text .source{font-size:.75rem;color:#888;margin-top:.5rem}
+.label-tag{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:.15rem .5rem;border-radius:4px;margin-bottom:.4rem}
+
+/* GRAMMAR */
+.grammar-box{background:#1a2e4a;color:#fff;border-radius:10px;padding:1rem 1.2rem;margin:.75rem 0}
+.grammar-box h4{font-family:Georgia,serif;color:#c9943a;font-size:.95rem;margin-bottom:.6rem}
+.grammar-box .rule{font-size:.84rem;color:#c8d8ea;margin-bottom:.5rem;padding-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.grammar-box .rule:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.grammar-box .formula{font-size:.82rem;background:rgba(255,255,255,.1);border-radius:6px;padding:.4rem .7rem;margin:.3rem 0;font-family:monospace;color:#f0c060}
+.grammar-box em{color:#a8c5e8;font-style:italic}
+
+/* SENTENCE TRANSFORM */
+.transform-row{margin-bottom:.9rem}
+.transform-prompt{font-size:.86rem;background:#f0f4f8;border-radius:6px;padding:.5rem .8rem;margin-bottom:.3rem;color:#1a2e4a}
+.transform-input{width:100%;border:1.5px solid #e0ddd6;border-radius:8px;padding:.45rem .8rem;font-size:.85rem;font-family:inherit;color:#1e1e1e;background:#fff;outline:none;transition:border .18s}
+.transform-input:focus{border-color:#4a7c59}
+.transform-input.ok{border-color:#4a7c59;background:#f0faf2}
+.transform-input.no{border-color:#b5453a;background:#fff8f8}
+.transform-btn{background:#4a7c59;color:#fff;border:none;border-radius:8px;padding:.4rem .95rem;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;margin-top:.3rem}
+.transform-btn:hover{background:#3a6147}
+.transform-fb{font-size:.79rem;margin-top:.25rem;min-height:1rem;font-weight:600}
+
+/* PB */
+.pb{background:#f0f9f8;border:1.5px solid #2a7f7f;border-radius:10px;padding:.95rem 1.15rem;margin:.75rem 0}
+.pblbl{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2a7f7f;margin-bottom:.65rem}
+.pbgrid{display:grid;grid-template-columns:1fr 1fr;gap:.3rem 1.2rem}
+.ph{font-size:.84rem;padding:.22rem 0;border-bottom:1px dashed #b2d8d5;font-style:italic;color:#1a4a4a}
+
+.disc{background:linear-gradient(135deg,#2a7f7f,#1f6060);color:#fff;border-radius:10px;padding:1rem 1.2rem;margin:.75rem 0}
+.disc p{font-size:.87rem;color:#d4eaea;margin-bottom:.4rem}
+.disc p:last-child{margin:0}
+.disc strong{color:#fff}
+
+.tip{background:#fffbf0;border:1px solid #f0d98a;border-radius:8px;padding:.7rem 1rem;margin:.75rem 0;font-size:.86rem}
+.tiplbl{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#c9943a;margin-bottom:.25rem}
+
+.xpbadge{display:inline-flex;align-items:center;gap:.4rem;background:#c9943a;color:#fff;border-radius:20px;padding:.22rem .8rem;font-size:.77rem;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:background .18s}
+.xpbadge:hover{background:#a87830}
+.xp-row{text-align:right;margin-top:.8rem}
+
+@media(max-width:580px){
+  .obj-grid,.qcard-grid,.cat-grid,.pbgrid{grid-template-columns:1fr}
+  .hdr h1{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="htag">Pre-Independent 4 · Unit 11 – Money in the Bank</div>
+  <h1>Class 6 — <em>The Gig Economy</em></h1>
+  <div class="hmeta">
+    <span class="hpill">📅 Class 6</span>
+    <span class="hpill">🎯 B1+</span>
+    <span class="hpill">⏱ 90 min</span>
+    <span class="hpill">🖥 Virtual</span>
+    <span class="hpill">📖 Unit 11 · Lesson 1 · p. —</span>
+  </div>
+</div>
+
+<div class="objectives">
+  <div class="obj-label">Learning Objectives</div>
+  <div class="obj-grid">
+    <div class="obj-item"><span class="obj-n">1</span>Activate and review vocabulary related to money, work and the gig economy</div>
+    <div class="obj-item"><span class="obj-n">2</span>Read for the main idea and respond critically to texts about modern work</div>
+    <div class="obj-item"><span class="obj-n">3</span>Understand and use causative structures with <em>have</em>, <em>get</em> and <em>make</em></div>
+    <div class="obj-item"><span class="obj-n">4</span>Have extended conversations using unit vocabulary and complete answers</div>
+  </div>
+</div>
+
+<div class="xpbar">
+  <span class="xplbl">⭐ Class XP</span>
+  <div class="xptrack"><div class="xpfill" id="xpFill"></div></div>
+  <span class="xpnum" id="xpNum">0 / 100 XP</span>
+</div>
+
+<div class="agenda">
+  <div class="ag"><span class="dot" style="background:#c9943a"></span>Warm-Up 8 min</div>
+  <div class="ag"><span class="dot" style="background:#5c5f9e"></span>Vocabulary Review 15 min</div>
+  <div class="ag"><span class="dot" style="background:#b07d1a"></span>Questions + Answers 10 min</div>
+  <div class="ag"><span class="dot" style="background:#2a7f7f"></span>Conversation 12 min</div>
+  <div class="ag"><span class="dot" style="background:#b5453a"></span>Reading 15 min</div>
+  <div class="ag"><span class="dot" style="background:#4a7c59"></span>Grammar 20 min</div>
+  <div class="ag"><span class="dot" style="background:#7c4fa0"></span>Wrap-Up 10 min</div>
+</div>
+
+<div class="wrap">
+
+<!-- ══════════ WARM-UP ══════════ -->
+<div class="sblock sw open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Warm-Up</span>
+    <span class="stitle">💰 New Unit — Money & Work</span>
+    <span class="stime">⏱ 8 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 We're starting a new unit today — Unit 11: Money in the Bank. This short opener gets you thinking about money and work before we review the vocabulary you'll need for the whole unit.</div>
+
+    <div class="ablock">
+      <div class="albl">⚡ Brain Dump — Solo (2 min)</div>
+      <p>How many words connected to <strong>money and finances</strong> can you write in 90 seconds? Type them in the chat — don't overthink it.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4rem;margin:.6rem 0">
+        <div style="background:#f8f6f1;border-radius:7px;padding:.45rem .7rem;font-size:.83rem;color:#888;text-align:center">💸 spending</div>
+        <div style="background:#f8f6f1;border-radius:7px;padding:.45rem .7rem;font-size:.83rem;color:#888;text-align:center">🏦 savings</div>
+        <div style="background:#f8f6f1;border-radius:7px;padding:.45rem .7rem;font-size:.83rem;color:#888;text-align:center">💳 debt</div>
+      </div>
+      <p style="font-size:.82rem;color:#888">These are just examples — yours don't have to be similar!</p>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">💬 Quick Discussion — Pairs (4 min)</div>
+      <div class="disc">
+        <p><strong>Is it better to save for the future or enjoy your money now?</strong></p>
+        <p>There's no right answer — just share your honest opinion. Give at least one reason or example.</p>
+        <p><em>"I think it's better to ___ because in my experience..."</em></p>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">📣 Report Back (2 min)</div>
+      <p>Each pair shares their position in one sentence. Did most people agree or disagree?</p>
+    </div>
+
+    <div class="transition">
+      <span>➜</span>
+      <span>Let's build the vocabulary you'll need for the whole unit — money, work and the gig economy. Some of these you already know. Let's find out how many.</span>
+    </div>
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(8)">✅ Done → +8 XP</button></div>
+  </div>
+</div>
+
+<!-- ══════════ VOCABULARY REVIEW ══════════ -->
+<div class="sblock sv open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Vocabulary Review</span>
+    <span class="stitle">Money, Work & the Gig Economy</span>
+    <span class="stime">⏱ 15 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 These are the key words and expressions for this unit. Review them carefully — you'll need them in the Q&A, the conversation activity, and the reading that follows.</div>
+
+    <div class="ablock">
+      <div class="albl">📋 Vocabulary by Category</div>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <div class="cat-title" style="color:#1a2e4a">💼 Work & Contracts</div>
+          <div class="cat-item"><strong>contract</strong> — written work agreement</div>
+          <div class="cat-item"><strong>freelance</strong> — self-employed, project-by-project</div>
+          <div class="cat-item"><strong>permanent</strong> — long-term, stable job</div>
+          <div class="cat-item"><strong>temporary</strong> — short-term job</div>
+          <div class="cat-item"><strong>gig</strong> — a single, short-term job or task</div>
+          <div class="cat-item"><strong>be laid off</strong> — lose your job (company's decision)</div>
+          <div class="cat-item"><strong>hiring</strong> — looking for new employees</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-title" style="color:#4a7c59">💰 Money & Benefits</div>
+          <div class="cat-item"><strong>pension</strong> — retirement income</div>
+          <div class="cat-item"><strong>sick pay</strong> — paid time off when ill</div>
+          <div class="cat-item"><strong>vacation pay</strong> — paid annual leave</div>
+          <div class="cat-item"><strong>earn cash</strong> — make money</div>
+          <div class="cat-item"><strong>in exchange for</strong> — in return for</div>
+          <div class="cat-item"><strong>extra income</strong> — money beyond your salary</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-title" style="color:#5c5f9e">🔄 Key Expressions</div>
+          <div class="cat-item"><strong>sign up with</strong> — register with a company/service</div>
+          <div class="cat-item"><strong>work for yourself</strong> — be self-employed</div>
+          <div class="cat-item"><strong>make ends meet</strong> — have just enough money</div>
+          <div class="cat-item"><strong>figure out</strong> — understand / work out</div>
+          <div class="cat-item"><strong>no day is the same</strong> — varied, unpredictable work</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-title" style="color:#b5453a">🌐 The Gig Economy</div>
+          <div class="cat-item"><strong>gig economy</strong> — system of short-term work contracts</div>
+          <div class="cat-item"><strong>chore</strong> — routine household task</div>
+          <div class="cat-item"><strong>outsource</strong> — pay someone else to do a task</div>
+          <div class="cat-item"><strong>get someone to do sth</strong> — arrange for someone to do it</div>
+          <div class="cat-item"><strong>do it yourself</strong> — complete a task without help</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">⚡ Activity A — Fill in the Blank (4 min)</div>
+      <p>Complete each sentence with the correct word or expression. Type your answer and click Check.</p>
+
+      <div class="fill-row">1. She doesn't have a _____ — she works on short projects for different companies.
+        <input class="fill-blank" id="fv0" placeholder="answer">
+        <button class="fill-btn" onclick="chkFill('fv0',['contract'],'ffb0')">Check</button>
+        <span class="fill-fb" id="ffb0"></span>
+      </div>
+      <div class="fill-row">2. He was _____ last year when the company closed his department.
+        <input class="fill-blank" id="fv1" placeholder="answer">
+        <button class="fill-btn" onclick="chkFill('fv1',['laid off'],'ffb1')">Check</button>
+        <span class="fill-fb" id="ffb1"></span>
+      </div>
+      <div class="fill-row">3. The advantage of a permanent job is that you get _____, so you still earn money when you're sick.
+        <input class="fill-blank" id="fv2" placeholder="answer">
+        <button class="fill-btn" onclick="chkFill('fv2',['sick pay'],'ffb2')">Check</button>
+        <span class="fill-fb" id="ffb2"></span>
+      </div>
+      <div class="fill-row">4. I _____ a delivery app so I can earn extra cash at weekends.
+        <input class="fill-blank" id="fv3" placeholder="answer">
+        <button class="fill-btn" onclick="chkFill('fv3',['signed up with','signed up'],'ffb3')">Check</button>
+        <span class="fill-fb" id="ffb3"></span>
+      </div>
+      <div class="fill-row">5. Working as a _____ designer means you choose your own clients and schedule.
+        <input class="fill-blank" id="fv4" placeholder="answer">
+        <button class="fill-btn" onclick="chkFill('fv4',['freelance'],'ffb4')">Check</button>
+        <span class="fill-fb" id="ffb4"></span>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">⚡ Activity B — Which Word Fits? (3 min)</div>
+
+      <div class="mcq" id="mv0">
+        <div class="mcq-q">1. She gave me her old laptop _____ the books I no longer needed.</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'mv0',false)">a. instead of</button>
+          <button class="mopt" onclick="mcq(this,'mv0',true)">b. in exchange for</button>
+          <button class="mopt" onclick="mcq(this,'mv0',false)">c. because of</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+
+      <div class="mcq" id="mv1">
+        <div class="mcq-q">2. I prefer _____ work — I like setting my own hours and working from home.</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'mv1',false)">a. permanent</button>
+          <button class="mopt" onclick="mcq(this,'mv1',true)">b. freelance</button>
+          <button class="mopt" onclick="mcq(this,'mv1',false)">c. contracted</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+
+      <div class="mcq" id="mv2">
+        <div class="mcq-q">3. After he retired, he lived on his _____ from the government.</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'mv2',false)">a. salary</button>
+          <button class="mopt" onclick="mcq(this,'mv2',false)">b. gig</button>
+          <button class="mopt" onclick="mcq(this,'mv2',true)">c. pension</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+    </div>
+
+    <div class="transition">
+      <span>➜</span>
+      <span>Good — now let's put this vocabulary to work. You'll answer a set of questions using as many of these expressions as you can, then use your answers in a group conversation.</span>
+    </div>
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(15)">✅ Done → +15 XP</button></div>
+  </div>
+</div>
+
+<!-- ══════════ Q&A PREP ══════════ -->
+<div class="sblock sq open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Q&amp;A Prep</span>
+    <span class="stitle">Think Before You Speak</span>
+    <span class="stime">⏱ 10 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 Good conversations need good thinking first. Read each question, think about your answer, and write 1–2 sentences before the group discussion. This way you'll have something real to say — not just "I don't know!"</div>
+
+    <div class="ablock">
+      <div class="albl">✍️ Read & Prepare — Solo (7 min)</div>
+      <p>Click each card to see the question and a vocabulary hint. Write your answers in the chat or in your notes.</p>
+      <div class="qcard-grid">
+        <div class="qcard" onclick="this.classList.toggle('active')">
+          <div class="qcard-num">Question 1</div>
+          <div class="qcard-text">Have you ever done any freelance or gig work? What was it like?</div>
+          <div class="qcard-hint">💡 Use: <em>freelance / gig / earn cash / no day is the same / contract</em></div>
+        </div>
+        <div class="qcard" onclick="this.classList.toggle('active')">
+          <div class="qcard-num">Question 2</div>
+          <div class="qcard-text">What do you think are the biggest advantages and disadvantages of gig work?</div>
+          <div class="qcard-hint">💡 Use: <em>sick pay / pension / vacation pay / permanent / flexible</em></div>
+        </div>
+        <div class="qcard" onclick="this.classList.toggle('active')">
+          <div class="qcard-num">Question 3</div>
+          <div class="qcard-text">What tasks or chores do you usually get someone else to do for you? Why?</div>
+          <div class="qcard-hint">💡 Use: <em>get someone to / outsource / chore / in exchange for / earn cash</em></div>
+        </div>
+        <div class="qcard" onclick="this.classList.toggle('active')">
+          <div class="qcard-num">Question 4</div>
+          <div class="qcard-text">If you lost your job tomorrow, what would you do to make money while you looked for a new one?</div>
+          <div class="qcard-hint">💡 Use: <em>sign up with / gig / laid off / make ends meet / temporary</em></div>
+        </div>
+        <div class="qcard" onclick="this.classList.toggle('active')">
+          <div class="qcard-num">Question 5</div>
+          <div class="qcard-text">Do you prefer a permanent job with a fixed salary or flexible work where you control your time? Why?</div>
+          <div class="qcard-hint">💡 Use: <em>permanent / contract / freelance / work for yourself / security</em></div>
+        </div>
+        <div class="qcard" onclick="this.classList.toggle('active')">
+          <div class="qcard-num">Question 6</div>
+          <div class="qcard-text">Has technology changed the way you work or earn money? Give an example.</div>
+          <div class="qcard-hint">💡 Use: <em>sign up with / app / gig economy / do it yourself / figure out</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <div class="tiplbl">💡 Aim for complete answers</div>
+      Don't just say yes or no. Give a reason, an example, or a personal story. That's what makes conversation interesting — and that's what will help your English grow.
+    </div>
+
+    <div class="transition">
+      <span>➜</span>
+      <span>You've got your ideas ready. Now take those answers into a <strong>group conversation</strong> — keep talking, react to each other, and use the vocabulary.</span>
+    </div>
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(10)">✅ Done → +10 XP</button></div>
+  </div>
+</div>
+
+<!-- ══════════ CONVERSATION ══════════ -->
+<div class="sblock ssp open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Conversation</span>
+    <span class="stitle">🎙 Gig Economy — Group Discussion</span>
+    <span class="stime">⏱ 12 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 This is your chance to have a real conversation in English using the vocabulary you just reviewed. The goal is not perfection — it's fluency, reaction, and keeping the conversation going.</div>
+
+    <div class="gc">
+      <h3>🎮 Conversation Spin</h3>
+      <p>In groups of 4–5, spin the wheel to get a question. <strong>Everyone answers</strong> before you spin again. React to what your classmates say — agree, disagree, or ask a follow-up.</p>
+      <p>Try to use at least <strong>one vocabulary expression</strong> from the review in each answer.</p>
+    </div>
+
+    <div class="ablock">
+      <div style="text-align:center">
+        <div class="spin-display" id="spinD">Press Spin to get a question!</div>
+        <button class="spinbtn" onclick="doSpin()">🎲 Spin</button>
+      </div>
+    </div>
+
+    <div class="pb">
+      <div class="pblbl">🗣 Conversation Boosters</div>
+      <div class="pbgrid">
+        <div class="ph">That's interesting — I've never thought about it that way.</div>
+        <div class="ph">I completely agree, especially because...</div>
+        <div class="ph">I see your point, but in my case...</div>
+        <div class="ph">Can you give an example of what you mean?</div>
+        <div class="ph">I'd add that... / Building on what you said...</div>
+        <div class="ph">Actually, I disagree — I think...</div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <div class="tiplbl">💡 Keep Talking Rule</div>
+      If you finish your answer in under 30 seconds, say more. Add a reason, an example, or ask your partner a follow-up question. Silence is the only mistake here.
+    </div>
+
+    <div class="transition">
+      <span>➜</span>
+      <span>Great conversation. Now let's read three real texts about gig work — and see how much of the vocabulary you recognize in context.</span>
+    </div>
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(12)">✅ Done → +12 XP</button></div>
+  </div>
+</div>
+
+<!-- ══════════ READING ══════════ -->
+<div class="sblock sr open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Reading</span>
+    <span class="stitle">The Gig Economy — Three Texts</span>
+    <span class="stime">⏱ 15 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 You'll practise reading for the main idea — a key skill that means understanding what a text is about without reading every single word. Then you'll think critically about the ideas.</div>
+
+    <div class="ablock">
+      <div class="albl">📖 Read the Three Texts (5 min)</div>
+      <p>Read quickly. Don't look up every word — focus on the overall message of each text.</p>
+
+      <div class="reading-text">
+        <span class="label-tag" style="background:#eef0fa;color:#5c5f9e">Text 1 — Job Ad</span>
+        <p>We're <strong>hiring</strong> in your area! Would you like to earn some extra cash? Are you happy to do <strong>freelance</strong> work from home? If the answer is "yes," then give Reviews4U a call. We're a software company that needs gamers to test our new range of PC games. We'll pay <strong>$40</strong> for each gaming review you send us. <strong>No contract</strong>, no stress, and hours that work for you.</p>
+      </div>
+
+      <div class="reading-text">
+        <span class="label-tag" style="background:#faeaea;color:#b5453a">Text 2 — Article</span>
+        <p>Today's workers no longer expect to have the same job for life. The <strong>gig economy</strong> means that more and more people are working for themselves, offering their services <strong>in exchange for</strong> cash, but with <strong>no contract, no pension, and no vacation or sick pay</strong>. The way we take care of chores has changed at home, too — we get people to walk our dogs, clean our houses, and deliver our groceries. Interestingly, there are things we used to get others to do that we now do ourselves because of technology: we book our own flights and manage our own money online.</p>
+      </div>
+
+      <div class="reading-text">
+        <span class="label-tag" style="background:#edf5ee;color:#4a7c59">Text 3 — Business Profile</span>
+        <p>CeeCee Rogers, a tech worker in New York, <strong>was laid off</strong> in 2018. She knew it might take a long time to find another job in her field. <em>"When I lost my job, it was a big shock. Luckily, I found out about GigGetters and I <strong>signed up</strong> with them. They have me do various gigs so I can make money while I'm looking for something more <strong>permanent</strong>. I enjoy it — <strong>no day is the same</strong>!"</em></p>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">🎯 Match the Title (2 min)</div>
+      <p>Match each title with the correct text. Click the best option.</p>
+
+      <div class="mcq" id="rq0">
+        <div class="mcq-q">Text 1 is best described as...</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'rq0',false)">a. Changes to Our Working and Home Lives</button>
+          <button class="mopt" onclick="mcq(this,'rq0',true)">b. Calling All Computer Game Fans...</button>
+          <button class="mopt" onclick="mcq(this,'rq0',false)">c. Every Day Is Different!</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+      <div class="mcq" id="rq1">
+        <div class="mcq-q">Text 2 is best described as...</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'rq1',true)">a. Changes to Our Working and Home Lives</button>
+          <button class="mopt" onclick="mcq(this,'rq1',false)">b. Calling All Computer Game Fans...</button>
+          <button class="mopt" onclick="mcq(this,'rq1',false)">c. Every Day Is Different!</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+      <div class="mcq" id="rq2">
+        <div class="mcq-q">Text 3 is best described as...</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'rq2',false)">a. Changes to Our Working and Home Lives</button>
+          <button class="mopt" onclick="mcq(this,'rq2',false)">b. Calling All Computer Game Fans...</button>
+          <button class="mopt" onclick="mcq(this,'rq2',true)">c. Every Day Is Different!</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">✅ True or False (3 min)</div>
+
+      <div class="mcq" id="tf0">
+        <div class="mcq-q">1. The job at Reviews4U pays the same amount every month.</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'tf0',false)">True</button>
+          <button class="mopt" onclick="mcq(this,'tf0',true)">False ✓</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+      <div class="mcq" id="tf1">
+        <div class="mcq-q">2. Text 2 mentions both advantages and disadvantages of gig work.</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'tf1',true)">True ✓</button>
+          <button class="mopt" onclick="mcq(this,'tf1',false)">False</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+      <div class="mcq" id="tf2">
+        <div class="mcq-q">3. CeeCee plans to work for GigGetters permanently.</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'tf2',false)">True</button>
+          <button class="mopt" onclick="mcq(this,'tf2',true)">False ✓</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">💬 Critical Thinking — Pairs (3 min)</div>
+      <div class="disc">
+        <p><strong>What are the advantages and disadvantages of gig work?</strong></p>
+        <p>Think about: money, security, freedom, benefits, social life. Which matters most to you personally?</p>
+        <p><em>"For me, the biggest disadvantage would be ___ because I really value ___."</em></p>
+      </div>
+    </div>
+
+    <div class="transition">
+      <span>➜</span>
+      <span>Did you notice the language in Text 2? <em>"We get people to walk our dogs... we have our groceries delivered."</em> This is a special grammar structure — <strong>causatives</strong> — and it's very common in English. Let's learn it properly.</span>
+    </div>
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(15)">✅ Done → +15 XP</button></div>
+  </div>
+</div>
+
+<!-- ══════════ GRAMMAR ══════════ -->
+<div class="sblock sg open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Grammar</span>
+    <span class="stitle">Causatives — have, get & make</span>
+    <span class="stime">⏱ 20 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 Causatives let you talk about arranging for someone else to do something — or forcing them to. They appear constantly in everyday English, especially when talking about services, work, and home life.</div>
+
+    <div class="grammar-box">
+      <h4>📐 The Rules</h4>
+      <div class="rule">
+        <strong>HAVE / GET + object + past participle</strong> — someone does a service for you
+        <div class="formula">subject + have/get + object + past participle</div>
+        <em>I have my car serviced every year. &nbsp;|&nbsp; She got her nails done before the wedding.</em>
+      </div>
+      <div class="rule">
+        <strong>HAVE + person + base form</strong> — you arrange for someone to do something
+        <div class="formula">subject + have + person + base form</div>
+        <em>They have a cleaner come every Friday. &nbsp;|&nbsp; I had a mechanic check the engine.</em>
+      </div>
+      <div class="rule">
+        <strong>GET + person + to + infinitive</strong> — you ask or persuade someone
+        <div class="formula">subject + get + person + to + infinitive</div>
+        <em>She got her brother to help with the move. &nbsp;|&nbsp; Can you get someone to fix this?</em>
+      </div>
+      <div class="rule">
+        <strong>MAKE + person + base form</strong> — you force or require someone
+        <div class="formula">subject + make + person + base form</div>
+        <em>My boss makes us work late on Fridays. &nbsp;|&nbsp; She made her son tidy his room.</em>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">⚡ Activity A — Which Structure? (4 min)</div>
+
+      <div class="mcq" id="gq0">
+        <div class="mcq-q">1. "My parents always _____ me do my homework before I could watch TV."</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'gq0',false)">a. got</button>
+          <button class="mopt" onclick="mcq(this,'gq0',true)">b. made</button>
+          <button class="mopt" onclick="mcq(this,'gq0',false)">c. had</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+
+      <div class="mcq" id="gq1">
+        <div class="mcq-q">2. "She _____ her hair cut at an expensive salon downtown."</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'gq1',true)">a. had</button>
+          <button class="mopt" onclick="mcq(this,'gq1',false)">b. made</button>
+          <button class="mopt" onclick="mcq(this,'gq1',false)">c. got someone</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+
+      <div class="mcq" id="gq2">
+        <div class="mcq-q">3. "I couldn't carry everything, so I _____ my neighbour to help me."</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'gq2',false)">a. made</button>
+          <button class="mopt" onclick="mcq(this,'gq2',true)">b. got</button>
+          <button class="mopt" onclick="mcq(this,'gq2',false)">c. had</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+
+      <div class="mcq" id="gq3">
+        <div class="mcq-q">4. "They _____ a plumber fix the leak in the bathroom."</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'gq3',false)">a. got</button>
+          <button class="mopt" onclick="mcq(this,'gq3',true)">b. had</button>
+          <button class="mopt" onclick="mcq(this,'gq3',false)">c. made</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">⚡ Activity B — Transform the Sentence (6 min)</div>
+      <p>Rewrite each sentence using the causative structure shown. Type your answer and click Check.</p>
+
+      <div class="transform-row">
+        <div class="transform-prompt">Someone cleans my house every week. → Use: <strong>have + object + past participle</strong></div>
+        <input class="transform-input" id="t0" placeholder="I have...">
+        <button class="transform-btn" onclick="chkTransform(0)">Check</button>
+        <div class="transform-fb" id="tfb0"></div>
+      </div>
+
+      <div class="transform-row">
+        <div class="transform-prompt">My boss required us to arrive early. → Use: <strong>make + person + base form</strong></div>
+        <input class="transform-input" id="t1" placeholder="My boss made...">
+        <button class="transform-btn" onclick="chkTransform(1)">Check</button>
+        <div class="transform-fb" id="tfb1"></div>
+      </div>
+
+      <div class="transform-row">
+        <div class="transform-prompt">I asked my colleague to cover my shift. → Use: <strong>get + person + to-infinitive</strong></div>
+        <input class="transform-input" id="t2" placeholder="I got...">
+        <button class="transform-btn" onclick="chkTransform(2)">Check</button>
+        <div class="transform-fb" id="tfb2"></div>
+      </div>
+
+      <div class="transform-row">
+        <div class="transform-prompt">A technician repaired my laptop for me. → Use: <strong>have + object + past participle</strong></div>
+        <input class="transform-input" id="t3" placeholder="I had...">
+        <button class="transform-btn" onclick="chkTransform(3)">Check</button>
+        <div class="transform-fb" id="tfb3"></div>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">💬 Activity C — Talk About It — Pairs (5 min)</div>
+      <p>Discuss these questions with a partner using causative structures in your answers.</p>
+      <ul>
+        <li>If you had unlimited money, what would you have or get other people to do for you?</li>
+        <li>What do you currently get other people to do — at work, at home, in your daily life?</li>
+        <li>Is there anything your boss, parents or school makes you do that you'd rather not? 😄</li>
+      </ul>
+      <div class="ex">"If I had enough money, I'd get someone to cook all my meals and I'd have my house cleaned every day. But I'd still do my own grocery shopping — I actually enjoy it."</div>
+    </div>
+
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(20)">✅ Done → +20 XP</button></div>
+  </div>
+</div>
+
+<!-- ══════════ WRAP-UP ══════════ -->
+<div class="sblock swrap open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Wrap-Up</span>
+    <span class="stitle">Exit Ticket + Speaking Round</span>
+    <span class="stime">⏱ 10 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 Close the class with a quick grammar speaking round and a personal reflection on what you learned today.</div>
+
+    <div class="ablock">
+      <div class="albl">🎙 Quick Fire Round — Whole Group (5 min)</div>
+      <p>Your teacher will point to someone. Answer the question in <strong>one complete sentence</strong> using a causative. Then that person points to the next.</p>
+      <div class="qcard-grid">
+        <div class="qcard" onclick="this.classList.toggle('active')">
+          <div class="qcard-num">Prompt A</div>
+          <div class="qcard-text">Name one thing you get someone else to do for you at home.</div>
+          <div class="qcard-hint"><em>"I get my _____ to _____ because..."</em></div>
+        </div>
+        <div class="qcard" onclick="this.classList.toggle('active')">
+          <div class="qcard-num">Prompt B</div>
+          <div class="qcard-text">Name one thing someone makes you do that you don't enjoy.</div>
+          <div class="qcard-hint"><em>"My _____ makes me _____ even though..."</em></div>
+        </div>
+        <div class="qcard" onclick="this.classList.toggle('active')">
+          <div class="qcard-num">Prompt C</div>
+          <div class="qcard-text">Name one service you'd have done if you had more money.</div>
+          <div class="qcard-hint"><em>"I'd have my _____ done by a professional every..."</em></div>
+        </div>
+        <div class="qcard" onclick="this.classList.toggle('active')">
+          <div class="qcard-num">Prompt D</div>
+          <div class="qcard-text">Name one thing you got someone to help you with recently.</div>
+          <div class="qcard-hint"><em>"Recently I got my _____ to help me _____ because..."</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">🎟 Exit Ticket — Chat (3 min)</div>
+      <div class="disc">
+        <p>🧠 <strong>One thing I learned today:</strong> "I didn't know that..."</p>
+        <p>💡 <strong>One word or expression I want to remember:</strong> "The expression ___ means..."</p>
+        <p>❓ <strong>One thing I'm still not sure about:</strong> "I need to practise..."</p>
+      </div>
+    </div>
+
+    <div class="tip">
+      <div class="tiplbl">✅ Today You...</div>
+      Reviewed vocabulary for money, work and the gig economy · Read three texts for main idea · Used causatives with have, get and make · Had an extended group conversation using unit vocabulary
+    </div>
+
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(20)">✅ Done → +20 XP</button></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function tog(h){h.closest('.sblock').classList.toggle('open')}
+
+let xp=0;
+function addXP(n){
+  xp=Math.min(100,xp+n);
+  document.getElementById('xpFill').style.width=xp+'%';
+  document.getElementById('xpNum').textContent=xp+' / 100 XP';
+}
+
+// MCQ
+function mcq(btn,id,correct){
+  const wrap=document.getElementById(id);
+  if(wrap.querySelector('.ok'))return;
+  wrap.querySelectorAll('.mopt').forEach(b=>b.disabled=true);
+  btn.classList.add(correct?'ok':'no');
+  const fb=wrap.querySelector('.mcq-fb');
+  fb.textContent=correct?'✅ Correct!':'❌ Not quite — try again.';
+  fb.className='mcq-fb'+(correct?'':' bad');
+  if(correct)addXP(1);
+}
+
+// FILL
+const fillData={
+  fv0:{keys:['contract'],hint:'Think about the written agreement between employer and employee.'},
+  fv1:{keys:['laid off'],hint:'This means losing your job because the company decided to cut positions.'},
+  fv2:{keys:['sick pay'],hint:'This is the benefit that means you still earn money when you\'re ill.'},
+  fv3:{keys:['signed up','signed up with'],hint:'Use "sign up with" to register with an app or company.'},
+  fv4:{keys:['freelance'],hint:'This adjective describes someone who is self-employed and works project by project.'}
+};
+function chkFill(id,_,fbId){
+  const val=document.getElementById(id).value.trim().toLowerCase();
+  const d=fillData[id];
+  const ok=d.keys.some(k=>val.includes(k));
+  document.getElementById(id).classList.remove('ok','no');
+  document.getElementById(id).classList.add(ok?'ok':'no');
+  const fb=document.getElementById(fbId);
+  if(ok){fb.textContent='✅';fb.style.color='#4a7c59';}
+  else{fb.textContent='❌ Hint: '+d.hint;fb.style.color='#b5453a';}
+}
+
+// SPINNER — conversation questions
+const spinQs=[
+  'Have you ever done any freelance or gig work? What was it like?',
+  'What do you think are the biggest advantages and disadvantages of gig work?',
+  'What tasks or chores do you usually get someone else to do for you? Why?',
+  'If you lost your job tomorrow, what would you do to make money while looking for a new one?',
+  'Do you prefer a permanent job with a fixed salary or flexible work where you control your time?',
+  'Has technology changed the way you work or earn money? Give an example.',
+  'Would you ever consider working in the gig economy full-time? Why or why not?',
+  'What is one household chore you always do yourself — and one you\'d love to outsource?'
+];
+function doSpin(){
+  const d=document.getElementById('spinD');
+  let i=0;
+  const iv=setInterval(function(){
+    d.textContent=spinQs[Math.floor(Math.random()*spinQs.length)];
+    if(++i>=18)clearInterval(iv);
+  },80);
+}
+
+// TRANSFORM — keyword check
+const transformData=[
+  {keys:['have my house cleaned','have the house cleaned'],hint:'Pattern: I have + object + past participle. "Clean" becomes "cleaned".'},
+  {keys:['made us arrive'],hint:'Pattern: make + person + base form (no "to"). "My boss made us arrive early."'},
+  {keys:['got my colleague to cover','got my colleague to help'],hint:'Pattern: get + person + to + infinitive. "I got my colleague to cover..."'},
+  {keys:['had my laptop repaired','had my laptop fixed'],hint:'Pattern: I had + object + past participle. "Repair" becomes "repaired".'}
+];
+function chkTransform(i){
+  const val=document.getElementById('t'+i).value.trim().toLowerCase();
+  const d=transformData[i];
+  const ok=d.keys.some(k=>val.includes(k));
+  const inp=document.getElementById('t'+i);
+  const fb=document.getElementById('tfb'+i);
+  inp.classList.remove('ok','no');
+  inp.classList.add(ok?'ok':'no');
+  if(ok){fb.textContent='✅ Well done!';fb.style.color='#4a7c59';addXP(2);}
+  else{fb.textContent='❌ '+d.hint;fb.style.color='#b5453a';}
+}
+</script>
+</body>
+</html>
